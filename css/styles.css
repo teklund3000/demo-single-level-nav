@@ -1,1 +1,39 @@
 /* developer styles go here */
+body {
+    font-family: sans-serif;
+}
+header {
+    max-width: 58rem;
+    margin: 0 auto;
+}
+ul.menu {
+    background: black;
+}
+ul.menu a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1rem;
+    /* inline elements will not take top & bottom padding and margins  */
+    display: block;
+    /* as a block element with padding, the whole li space becomes clickable.
+    its good practice to make anchor tags block level elements. */
+}
+
+/* shift from stacking to horizontal navigation with larger viewports */
+@media only screen and (min-width: 30rem) {
+    ul.menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* flex grow and flex shrink only work on children properties */
+    ul.menu li {
+        flex-grow: 1;
+        text-align: center;
+        flex-shrink: 0;
+        flex-basis: 171px;
+        /* flex-basis px size chosen by using inspector tool to measure the largest li . */
+    }
+    
+}
